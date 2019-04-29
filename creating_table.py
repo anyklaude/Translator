@@ -8,77 +8,27 @@ def create_table(cur):
 
 
 def insert_codes(cur):
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('be', 'Belarusian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('bg', 'Bulgarian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('hu', 'Hungarian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('vi', 'Vietnamese');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('nl', 'Dutch');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('el', 'Greek');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('da', 'Danish');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('ga', 'Irish');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('it', 'Italian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('is', 'Icelandic');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('es', 'Spanish');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('kk', 'Kazakh');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('ca', 'Catalan');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('zh', 'Chinese');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('ko', 'Korean');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('lv', 'Latvian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('lt', 'Lithuanian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('de', 'German');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('no', 'Norwegian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('pl', 'Polish');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('pt', 'Portuguese');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('ro', 'Romanian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('ru', 'Russian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('sr', 'Serbian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('sk', 'Slovakian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('sl', 'Slovenian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('th', 'Thai');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('tr', 'Turkish');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('uk', 'Ukrainian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('fi', 'Finnish');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('fr', 'French');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('hr', 'Croatian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('cs', 'Czech');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('sv', 'Swedish');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('gd', 'Scottish');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('et', 'Estonian');''')
-    cur.execute('''INSERT INTO TypingExchange (code, natural_language)
-                VALUES ('ja', 'Japanese');''')
+    dictionary = {
+        'be': 'Belarusian', 'bg': 'Bulgarian',
+        'hu': 'Hungarian',  'vi': 'Vietnamese',
+        'nl': 'Dutch',      'el': 'Greek',
+        'da': 'Danish',     'ga': 'Irish',
+        'it': 'Italian',    'is': 'Icelandic',
+        'es': 'Spanish',    'kk': 'Kazakh',
+        'ca': 'Catalan',    'zh': 'Chinese',
+        'ko': 'Korean',     'lv': 'Latvian',
+        'lt': 'Lithuanian', 'de': 'German',
+        'no': 'Norwegian',  'pl': 'Polish',
+        'pt': 'Portuguese', 'ro': 'Romanian',
+        'ru': 'Russian',    'sr': 'Serbian',
+        'sk': 'Slovakian',  'sl': 'Slovenian',
+        'th': 'Thai',       'tr': 'Turkish',
+        'uk': 'Ukrainian',  'fi': 'Finnish',
+        'fr': 'French',     'hr': 'Croatian',
+        'cs': 'Czech',      'sv': 'Swedish',
+        'gd': 'Scottish',   'et': 'Estonian',
+        'ja': 'Japanese'
+    }
+    for key in dictionary:
+        cur.execute('''INSERT INTO TypingExchange (code, natural_language)
+                    VALUES ('{}', '{}');'''.format(key, dictionary[key]))

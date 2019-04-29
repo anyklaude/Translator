@@ -1,7 +1,9 @@
 import requests
 import sqlite3
 import creating_table
+import telebot
 
+bot = telebot.TeleBot('788927932:AAFhYxhg5aLYtgDlU11yW15-PDMjiysOjHI')
 
 def get_translation(txt, lng):
     url = 'https://translate.yandex.net/api/v1.5/tr.json/translate'
